@@ -1,6 +1,16 @@
 #-*- coding:utf-8 -*-
 from random import choice
-cave_numbers = range(1,21)
+cave_numbers = range(0,20)
+caves = []
+for i in cave_numbers:
+    caves.append([])
+
+for i in cave_numbers:
+    for j in range(3):
+        passge_to = choice(cave_numbers)
+        caves[i].append(passge_to)
+print caves
+
 wumpus_location = choice(cave_numbers)
 wumpus_friend_location = choice(cave_numbers)
 player_location = choice(cave_numbers)
@@ -27,4 +37,5 @@ while True:
     if player_location == wumpus_friend_location:
         print "Ha~你被臭豆腐味的wumpus次掉了~"
         break
+
 		
