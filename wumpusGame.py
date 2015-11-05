@@ -5,10 +5,39 @@ caves = []
 for i in cave_numbers:
     caves.append([])
 
+unvisited_caves = range(0,20)
+visited_caves = [0]
+unvisited_caves.remove(0) #准备工作
+
+while unvisited_caves !=[]:
+    i = choice(visited_caves)
+    if len(caves[i]) >= 3:
+        continue   #随机选择一个已连接的洞穴
+
+    next_cave = choice(unvisited_caves)
+    caves[i].append(next_cave)
+    caves[next_cave].append(i) #将其连接到一个未连接的洞穴
+
+    visited_caves.append(next_cave)
+    unvisited_caves.remove(next_cave) #将洞穴标记为已连接
+
+    for number in cave_numbers:
+        print number, ":", caves[number]
+    print '-----------'   #报告进度
+
+for i in cave_numbers:
+    while len(caves[i]) < 3:
+        passage_to = choice(cave_numbers)
+        caves[i].append(passage_to)  #添加其他通道
+
+    for i in cave_numbers:
+        print number,":",caves[number]
+    print '------------'    #报告进度        
+    
 for i in cave_numbers:
     for j in range(3):
-        passge_to = choice(cave_numbers)
-        caves[i].append(passge_to)
+        passage_to = choice(cave_numbers)
+        caves[i].append(passage_to)
 print caves
 
 wumpus_location = choice(cave_numbers)
