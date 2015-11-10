@@ -1,13 +1,4 @@
-# from random import choice
-# cave_numbers = range(0,20)
-# caves = []
-# for i in cave_numbers:
-#     caves.append([])
-# for i in cave_numbers:
-#     passage_to =choice(cave_numbers)
-#     caves[i].append(passage_to)
-# print caves
-# 添加便利函数
+#-*- coding:utf-8 -*-
 def create_tunnel(cave_form, cave_to):
     """Create a tunnel between cave_form and cave_to """
     caves[cave_form].append(cave_to)
@@ -29,4 +20,3 @@ def print_caves():
 	for number in cave_numbers:
 		print number,":",cave[number]
 	print '----------'
-
